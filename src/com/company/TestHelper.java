@@ -16,7 +16,8 @@ public class TestHelper {
 
 
     public static void setup(String url){
-        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+                //"C:\\Selenium\\chromedriver.exe");
         drv = new ChromeDriver();
         drv.get(url);
     }
