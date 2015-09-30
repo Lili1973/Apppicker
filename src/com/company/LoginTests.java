@@ -24,11 +24,25 @@ public class LoginTests {
     }
     @Test
     public void testSignInDeveloper() {
-        TestHelper.slp(2);
-        emailField("apppicker_developer@ukr.net", drv);
-        passwordField("apppicker_developer", drv);
+        Login.pressSignIn();
+        Login.emailField("apppicker_developer@ukr.net");
+        Login.passwordField("apppicker_developer");
+        Login.pressLoginbutton();
+        Assert.assertEquals("Lilia_developer1", Login.getDeveloperNick(Login.developerNick));
+        System.out.println(Login.getDeveloperNick(Login.developerNick));
+        TestHelper.slp(5);
 
-    }*/
+    }
+    @Test
+    public void testSignInDeveloper2() {
+        Login.pressSignIn();
+        Login.emailField("0");
+        Login.passwordField("apppicker_developer");
+        Login.pressLoginbutton();
+        TestHelper.slp(5);
+        Assert.assertEquals("Incorrect login or password", Login.getErrorMessageLogin(Login.errorMessageLogin));
+
+    }
     @After
     public void afterDriver(){
         TestHelper.drv.quit();
