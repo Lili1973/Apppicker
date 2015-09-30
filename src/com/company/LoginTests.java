@@ -6,9 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-/**
- * Created by Rusya on 25.09.2015.
- */
+
 public class LoginTests {
 
     @Before
@@ -28,7 +26,7 @@ public class LoginTests {
         Login.emailField("apppicker_developer@ukr.net");
         Login.passwordField("apppicker_developer");
         Login.pressLoginbutton();
-        Assert.assertEquals("Lilia_developer1", Login.getDeveloperNick(Login.developerNick));
+        Assert.assertEquals("Lilia_developer", Login.getDeveloperNick(Login.developerNick));
         System.out.println(Login.getDeveloperNick(Login.developerNick));
         TestHelper.slp(5);
 
