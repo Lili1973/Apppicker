@@ -22,9 +22,8 @@ public class BestOfListTests {
         Assert.assertEquals("Benjamin Afterburner", Login.getDeveloperNick(Login.appID));
         System.out.println(Login.getDeveloperNick(Login.appID));
         Login.pressAccessFeaturesButton();
-        TestHelper.slp(5);
         Login.pressBestOfListMissionControl(Login.bestOfListMC);
-        TestHelper.slp(5);
+        TestHelper.slp(7);
         Login.selectBestOfList();
         TestHelper.slp(5);
     }

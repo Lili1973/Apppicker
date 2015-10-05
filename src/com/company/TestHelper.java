@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestHelper {
-    public static String url = "http://www.apppicker.com";
+    public static String url = "http://temp:tiernansteve@st.apppicker.com";
     public static WebDriver drv;
 
     public static String master="//tr[1]/td[2]/input";
@@ -16,17 +16,20 @@ public class TestHelper {
 
 
     public static void setup(String url){
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-                //"C:\\Selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
+                //"/usr/local/bin/chromedriver");
         drv = new ChromeDriver();
         drv.get(url);
     }
 
     public static WebElement cyclicElementSearchByXpath(String target) {
-        for (int i = 0; i < 250; i++)    {
+        for (int i = 0; i < 500; i++)    {
             if (drv.findElements(By.xpath(target)).size() > 0) {
+                System.out.println("break"+i);
                 break;
+
             }
+            System.out.println(i);
             slp(1);
         }
         return drv.findElement(By.xpath(target));
