@@ -24,7 +24,7 @@ public class TestHelper {
 
     public static WebElement cyclicElementSearchByXpath(String target) {
         for (int i = 0; i < 500; i++)    {
-            if (drv.findElements(By.xpath(target)).size() > 0) {
+            if ((drv.findElements(By.xpath(target)).size() > 0)&& (drv.findElement(By.xpath(target)).isDisplayed())) {
                 System.out.println("break"+i);
                 break;
 
