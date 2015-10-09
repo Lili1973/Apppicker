@@ -23,11 +23,14 @@ public class BestOfListTests {
         System.out.println(Login.getDeveloperNick(Login.developerNick));
 
         Assert.assertEquals("Benjamin Afterburner HD", BestOfList.getAppTitle("855541857"));
-        System.out.println(Login.getDeveloperNick("855541857"));
+        System.out.println(BestOfList.getAppTitle("855541857"));
         BestOfList.pressAccessFeaturesButton("855541857");
         BestOfList.pressBestOfListMissionControl("855541857");
-        BestOfList.selectBestOfList("The best 4th of July apps for iPhone and iPad");
-        TestHelper.slp(7);
+
+        BestOfList.selectBestOfList("Best brownies apps for iPhone and iPad");
+
+
+                TestHelper.slp(7);
         BestOfList.selectPosition("1st - available Oct 10, 2015");
     }
     @After

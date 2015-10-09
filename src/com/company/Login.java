@@ -27,7 +27,6 @@ public class Login {
         TestHelper.drv.findElement(By.xpath(signInButton)).click();
         // -----------dropdown Link=Sign IN
         TestHelper.drv.findElement(By.xpath(signInDropDown)).click();
-
     }
     // ------------fill field email
     public static void emailField(String value) {

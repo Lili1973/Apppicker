@@ -1,6 +1,7 @@
 package com.company;
 
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -13,8 +14,10 @@ public class BestOfList {
     //public static String bestOfListMC ="//*[@id='778106621']/div[2]/div/ul/li[3]/a";
     //span[text()='Lilia_developer']
 //*[@id="855541857"]/div[1]/div[1]/div[2]/div[1]/div/h2
-    //---------DEVELOPE PROFILE----------
-    // -----------Get App Title
+
+
+   //---------DEVELOPE PROFILE----------
+   // -----------Get App Title
     public static String getAppTitle(String value) {
         return TestHelper.cyclicElementSearchByXpath("//*[@id='"+value+"']/div[1]/div[1]/div[2]/div[1]/div/h2").getText();
         //TestHelper.drv.findElement(By.xpath(value)).getText();
@@ -29,15 +32,36 @@ public class BestOfList {
     public static void pressBestOfListMissionControl(String value) {
         // TestHelper.cyclicElementSearchByXpath(value);
         // TestHelper.drv.findElement(By.xpath(value)).click();
+        TestHelper.slp(3);
         TestHelper.cyclicElementSearchByXpath("//*[@id='"+value+"']/div[2]/div/ul/li[3]/a").click();
     }
 
     public static void selectBestOfList(String value) {
-        WebElement s=TestHelper.cyclicElementSearchByXpath("//*[@id='855541857']/div[2]/div/section/ng-include/div/div[4]/div[1]/select");
-        s.click();
+TestHelper.slp(5);
+        WebElement s=TestHelper.drv.findElement(By.xpath("//*[@ng-model='selectedList']"));
         Select sel=new Select(s);
+
+        //WebElement dropdown=TestHelper.cyclicElementSearchByXpath("//a[@class='chosen-single chosen-default']");
+                //*[@ng-model='selectedList']");
+        //("//span[text()='Select \"Best of\" list']");
+        System.out.println("dropdown");
+       // dropdown.click();
+        //TestHelper.slp(7);
+//        Select sel=new Select(dropdown);
+        //Select sel=new Select(TestHelper.cyclicElementSearchByXpath("//*[@ng-model='selectedList']"));
+        //System.out.println(sel.getFirstSelectedOption().getText());
+        //TestHelper.drv.findElement(By.xpath("//td[@id='countTd']/span[text()='" + item + "']")).click();
+        //
         sel.selectByVisibleText(value);
+
+//*[@id="855541857"]/div[2]/div/section/ng-include/div/div[4]/div[1]/div[1]/a/span
     }
+
+   /* public static void setVehicle(String value) {
+        WebElement selel = TestHelper.driver.findElement(By.id("ts_type"));
+        Select sel = new Select(selel);
+        sel.selectByVisibleText(value);
+    }*/
     public static void selectPosition(String value) {
         //WebElement s=TestHelper.cyclicElementSearchByXpath("select[@ng-model='selectedPosition']");
         Select sel=new Select(TestHelper.cyclicElementSearchByXpath("select[@ng-model='selectedPosition']"));
