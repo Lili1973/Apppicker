@@ -43,7 +43,7 @@ public class TestHelper {
         }
         return drv.findElement(By.xpath(target));
     }
-    public static WebElement waitElementDisplayedByXpath(String target) {
+    /*public static WebElement waitElementDisplayedByXpath(String target) {
         for (int i = 0; i < 250; i++)    {
             if (waitElementByXpath(target).isDisplayed()) {
                 break;
@@ -51,8 +51,16 @@ public class TestHelper {
             slp(1);
         }
         return waitElementByXpath(target);
+    }*/
+    public static WebElement waitElementDisplayedByXpath(String target) {
+        for (int i = 0; i < 250; i++)    {
+            if (drv.findElement(By.xpath(target)).isEnabled()) {
+                break;
+            }
+            slp(1);
+        }
+        return drv.findElement(By.xpath(target));
     }
-
     public static void quit(){
         drv.quit();
     }

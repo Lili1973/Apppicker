@@ -30,11 +30,19 @@ public class AppFreeOnSaleTests {
         BestOfList.pressAccessFeaturesButton(appID);
 
         AppFreeOnSale.pressFreeOnSaleMissionControl(appID);
-
         AppFreeOnSale.selectArticleAppsaleType("On sale iPhone apps");
         AppFreeOnSale.enterOldPrice("20");
-        //AppFreeOnSale.priceDropDate("11/10/2015");
-        AppFreeOnSale.setDate(31);
+        AppFreeOnSale.priceDropDate("15");
+       // TestHelper.slp(5);
+        AppFreeOnSale.selectFirstPlace("First place - $25");
+        TestHelper.slp(5);
+        AppFreeOnSale.enterDescription("if you're thinking about getting a tattoo but you're hesitating because of " +
+                "how permanent they are you're probably not alone. Getting a tattoo is a big decision " +
+                "because it will be with you the rest of your life so it's not a decision you should take lightly. " +
+                "It would be great if you could actually see what a tattoo might look like on you before you get " +
+                "the work done. With Virtual Tattoo Maker FREE you can now virtually add tattoos to your body so that " +
+                "you can see decide if it really is for you. This is a free app and it's compatible " +
+                "with the iPhone, iPad, and iPod touch");
         TestHelper.slp(5);
       //  BestOfList.selectPosition("1st - available Oct 10, 2015");
         }
