@@ -1,4 +1,4 @@
-package com.company;
+package com.tieste;
 
 import org.junit.After;
 import org.junit.Assert;

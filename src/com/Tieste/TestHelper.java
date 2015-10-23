@@ -1,6 +1,5 @@
-package com.company;
+package com.tieste;
 
-import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

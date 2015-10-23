@@ -1,7 +1,6 @@
-package com.company;
+package com.tieste;
 
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -24,8 +23,9 @@ public class BestOfList {
     }
 
     public static void pressAccessFeaturesButton(String value) {
-        TestHelper.drv.findElement(By.xpath("//*[@id='"+value+"']//div[@class='mc-tabs-content-apps-block-improve']/button[1]")).click();
-        System.out.println("ok");
+        TestHelper.drv.findElement(By.xpath("//*[@id='"+value+"']")).click();
+                //*[@id='"+value+"']//div[@class='mc-tabs-content-apps-block-improve']/button[1]")).click();
+                System.out.println("ok");
     }
 
     //----------- Order Article BEST OF LIST Order Article
@@ -68,7 +68,7 @@ TestHelper.slp(5);
         sel.selectByVisibleText(value);
     }
 }
-//a[text()='043 К']/../..//div[@title='Купе']/button
+//a[text()='043 пїЅ']/../..//div[@title='пїЅпїЅпїЅпїЅ']/button
 //*[@id='855541857']//div[@class='mc-tabs-content-apps-block-improve']/button[1]
 //*[@id='"+value+"']//div[2]/div/ul/li[3]/a
 //*[@id='855541857']/div[2]/div/ul/li[3]/a
