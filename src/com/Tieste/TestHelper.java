@@ -19,6 +19,7 @@ public class TestHelper {
                 //"/usr/local/bin/chromedriver");
         drv = new ChromeDriver();
         drv.get(url);
+        drv.manage().window().maximize();
     }
 
     public static WebElement cyclicElementSearchByXpath(String target) {
