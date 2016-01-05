@@ -18,8 +18,9 @@ public class BestOfList {
    //---------DEVELOPE PROFILE----------
    // -----------Get App Title
     public static String getAppTitle(String value) {
-        return TestHelper.cyclicElementSearchByXpath("//*[@id='"+value+"']/div[1]/div[1]/div[2]/div[1]/div/h2").getText();
+        return TestHelper.cyclicElementSearchByXpath("//*[@id='app-"+value+"']/div[1]/div[1]/div[2]/div[1]/div/h2").getText();
         //TestHelper.drv.findElement(By.xpath(value)).getText();
+        //*[@id="app-421838030"]/div/div[1]/div[2]/div[1]/div/h2
     }
 
     public static void pressAccessFeaturesButton(String value) {

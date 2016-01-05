@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BestOfListTests {
-    public static String appID ="844280848";
+    public static String appID ="421838030";
     @Before
     public void beforeDriver(){
         TestHelper.setup(TestHelper.url);
@@ -14,18 +14,18 @@ public class BestOfListTests {
 
     @Test
     public void testOrderBestOfList() {
-
         Login.pressSignIn();
         Login.emailField("apppicker_developer@ukr.net");
         Login.passwordField("apppicker_developer");
         Login.pressLoginbutton();
         Assert.assertEquals("Lilia_developer", Login.getDeveloperNick(Login.developerNick));
         System.out.println(Login.getDeveloperNick(Login.developerNick));
-
-        Assert.assertEquals("Benjamin Afterburner HD", BestOfList.getAppTitle("855541857"));
-        System.out.println(BestOfList.getAppTitle("855541857"));
-        BestOfList.pressAccessFeaturesButton("855541857");
-        BestOfList.pressBestOfListMissionControl("855541857");
+        System.out.println("****************");
+        Assert.assertEquals("Advanced System Monitor", BestOfList.getAppTitle(appID));
+        System.out.println("----------------");
+        System.out.println(BestOfList.getAppTitle(appID));
+        BestOfList.pressAccessFeaturesButton(appID);
+        BestOfList.pressBestOfListMissionControl(appID);
 
         BestOfList.selectBestOfList("Best brownies apps for iPhone and iPad");
 
