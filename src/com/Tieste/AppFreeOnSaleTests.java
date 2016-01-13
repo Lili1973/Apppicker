@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class AppFreeOnSaleTests {
 
-    public static String appID ="500909640";
+
 
     @Before
     public void beforeDriver(){
@@ -23,16 +23,19 @@ public class AppFreeOnSaleTests {
 
         Assert.assertEquals("Lilia_developer", Login.getDeveloperNick(Login.developerNick));
         System.out.println(Login.getDeveloperNick(Login.developerNick));
+        System.out.println("****************");
 
-        Assert.assertEquals("Block vs Block", BestOfList.getAppTitle(appID));
-        System.out.println(BestOfList.getAppTitle(appID));
+        Assert.assertEquals("Block vs Block", BestOfList.getAppTitle(AppFreeOnSale.appID));
+        System.out.println(BestOfList.getAppTitle(AppFreeOnSale.appID));
+        System.out.println("ok------------");
 
-        BestOfList.pressAccessFeaturesButton(appID);
-
-        AppFreeOnSale.pressFreeOnSaleMissionControl(appID);
+        BestOfList.pressAccessFeaturesButton(AppFreeOnSale.appID);
+        AppFreeOnSale.pressFreeOnSaleMissionControl();
         AppFreeOnSale.selectArticleAppsaleType("On sale iPhone apps");
+        System.out.println("ok--------3333----");
         AppFreeOnSale.enterOldPrice("20");
-        AppFreeOnSale.priceDropDate("25");
+        System.out.println("ok--------4444----");
+        AppFreeOnSale.priceDropDate("20");
         TestHelper.slp(5);
         AppFreeOnSale.selectFirstPlace("0");
         TestHelper.slp(5);

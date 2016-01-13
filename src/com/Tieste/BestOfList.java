@@ -6,42 +6,36 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class BestOfList {
-    //------------Best of List
 
-   // public static String appID ="//*[@id='844280848']/div[1]/div[1]/div[2]/div[1]/div/h2";
-   // public static String accessFeaturesButton ="//*[@id='778106621']/div[1]/div[2]/button[1]";
-    //public static String bestOfListMC ="//*[@id='778106621']/div[2]/div/ul/li[3]/a";
-    //span[text()='Lilia_developer']
-//*[@id="855541857"]/div[1]/div[1]/div[2]/div[1]/div/h2
+    public static String appID ="421838030";
+    public static String selectBestOfList="//*/select[@class='form-control ng-pristine ng-untouched ng-valid localytics-chosen']";
 
 
-   //---------DEVELOPE PROFILE----------
-   // -----------Get App Title
+    //---------DEVELOPE PROFILE----------
+    // -----------Get App Title
     public static String getAppTitle(String value) {
-        return TestHelper.cyclicElementSearchByXpath("//*[@id='app-"+value+"']/div[1]/div[1]/div[2]/div[1]/div/h2").getText();
-        //TestHelper.drv.findElement(By.xpath(value)).getText();
-        //*[@id="app-421838030"]/div/div[1]/div[2]/div[1]/div/h2
-    }
+        //return TestHelper.cyclicElementSearchByXpath("//*[@id='app-"+value+"']/div[1]/div[1]/div[2]/div[1]/div/h2").getText();
+        return TestHelper.cyclicElementSearchByXpath("//*[@id='app-"+value+"']//div[@class='mc-tabs-content-apps-block-data']" +
+                "//div[@class='mc-tabs-content-apps-block-data-info-app-title']").getText();
+      }
 
+    //------------Best of List
     public static void pressAccessFeaturesButton(String value) {
-        TestHelper.drv.findElement(By.xpath("//*[@id='"+value+"']")).click();
-                //*[@id='"+value+"']//div[@class='mc-tabs-content-apps-block-improve']/button[1]")).click();
-                System.out.println("ok");
+        TestHelper.drv.findElement(By.xpath("//*[@id='app-"+value+"']/div")).click();
     }
 
     //----------- Order Article BEST OF LIST Order Article
-    public static void pressBestOfListMissionControl(String value) {
-        // TestHelper.cyclicElementSearchByXpath(value);
-        // TestHelper.drv.findElement(By.xpath(value)).click();
+    public static void pressBestOfListMissionControl() {
         TestHelper.slp(3);
-        TestHelper.cyclicElementSearchByXpath("//*[@id='"+value+"']/div[2]/div/ul/li[3]/a").click();
+        TestHelper.drv.findElement(By.xpath("//a/i[@class='fa fa-list-ul']")).click();
     }
 
     public static void selectBestOfList(String value) {
-TestHelper.slp(5);
-        WebElement s=TestHelper.drv.findElement(By.xpath("//*[@ng-model='selectedList']"));
-        Select sel=new Select(s);
-
+        TestHelper.slp(5);
+        //WebElement s=TestHelper.drv.findElement(By.xpath("//*[@ng-model='selectedList']"));
+        //Select sel=new Select(s);
+        Select sel1 = new Select(TestHelper.drv.findElement(By.xpath(selectBestOfList)));
+        sel1.selectByVisibleText(value);
         //WebElement dropdown=TestHelper.cyclicElementSearchByXpath("//a[@class='chosen-single chosen-default']");
                 //*[@ng-model='selectedList']");
         //("//span[text()='Select \"Best of\" list']");
@@ -53,7 +47,7 @@ TestHelper.slp(5);
         //System.out.println(sel.getFirstSelectedOption().getText());
         //TestHelper.drv.findElement(By.xpath("//td[@id='countTd']/span[text()='" + item + "']")).click();
         //
-        sel.selectByVisibleText(value);
+        //sel.selectByVisibleText(value);
 
 //*[@id="855541857"]/div[2]/div/section/ng-include/div/div[4]/div[1]/div[1]/a/span
     }
