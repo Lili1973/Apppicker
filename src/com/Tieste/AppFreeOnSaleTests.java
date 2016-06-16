@@ -9,17 +9,19 @@ public class AppFreeOnSaleTests {
 
 
 
-    @Before
+ /*   @Before
     public void beforeDriver(){
         TestHelper.setup(TestHelper.url);
-        }
-
-    @Test
-    public void testOrderAppFreeOnSale() {
         Login.pressSignIn();
         Login.emailField("apppicker_developer@ukr.net");
         Login.passwordField("apppicker_developer");
         Login.pressLoginbutton();
+        }
+
+
+    @Test
+    public void testOrderAppFreeOnSale() {
+
 
         Assert.assertEquals("Lilia_developer", Login.getDeveloperNick(Login.developerNick));
         System.out.println(Login.getDeveloperNick(Login.developerNick));
@@ -27,18 +29,15 @@ public class AppFreeOnSaleTests {
 
         Assert.assertEquals("Block vs Block", BestOfList.getAppTitle(AppFreeOnSale.appID));
         System.out.println(BestOfList.getAppTitle(AppFreeOnSale.appID));
-        System.out.println("ok------------");
 
         BestOfList.pressAccessFeaturesButton(AppFreeOnSale.appID);
         AppFreeOnSale.pressFreeOnSaleMissionControl();
+
         AppFreeOnSale.selectArticleAppsaleType("On sale iPhone apps");
-        System.out.println("ok--------3333----");
-        AppFreeOnSale.enterOldPrice("20");
-        System.out.println("ok--------4444----");
+        AppFreeOnSale.enterOldPrice("25");
         AppFreeOnSale.priceDropDate("20");
         TestHelper.slp(5);
-        AppFreeOnSale.selectFirstPlace("0");
-        TestHelper.slp(5);
+        AppFreeOnSale.selectFirstPlace("First place - $25");
         AppFreeOnSale.enterDescription("if you're thinking about getting a tattoo but you're hesitating because of " +
                 "how permanent they are you're probably not alone. Getting a tattoo is a big decision " +
                 "because it will be with you the rest of your life so it's not a decision you should take lightly. " +
@@ -46,7 +45,9 @@ public class AppFreeOnSaleTests {
                 "the work done. With Virtual Tattoo Maker FREE you can now virtually add tattoos to your body so that " +
                 "you can see decide if it really is for you. This is a free app and it's compatible " +
                 "with the iPhone, iPad, and iPod touch");
+        System.out.println("ok--------777----");
         AppFreeOnSale.setTick();
+        System.out.println("ok--------888----");
         AppFreeOnSale.pressButtonPayPal();
         TestHelper.slp(20);
         AppFreeOnSale.fillPayPal();
@@ -57,6 +58,6 @@ public class AppFreeOnSaleTests {
     @After
     public void afterDriver(){
         //TestHelper.quit();
-    }
+    }*/
 }
 

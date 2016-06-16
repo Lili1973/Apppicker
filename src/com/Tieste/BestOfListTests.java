@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class BestOfListTests {
 
-    @Before
+   /* @Before
     public void beforeDriver(){
         TestHelper.setup(TestHelper.url);
     }
@@ -38,6 +38,6 @@ public class BestOfListTests {
     @After
     public void afterDriver(){
         TestHelper.quit();
-    }
+    }*/
 }
 //*[@id="855541857"]/div[1]/div[3]/button[1]

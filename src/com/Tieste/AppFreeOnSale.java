@@ -1,27 +1,30 @@
 package com.tieste;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class AppFreeOnSale {
 
-    //------------Best of List
+   /* public static String appID ="500909640";
+
+    public static String appSaleType="//*[@id='free-on-sale-tab-type']";
     public static String oldPrice = "//input[@id='free-on-sale-tab-old-price']";
-    public static String priceDropDate = "//input[@id='free-on-sale-tab-old-price-drop-date']";
+
+    public static String priceDropDateFielld="//*[@id='free-on-sale-tab-old-price-drop-date']";
+    public static String appPlace="//*[@id='free-on-sale-tab-place']";
     public static String description="//*[@id='free-on-sale-tab-description']";
     public static String tick="//input[@ng-model='form.confirmed']";
 
     //---------DEVELOPE PROFILE----------
-
-
     //----------- Order Article App Free/on sale Article
-    public static void pressFreeOnSaleMissionControl(String value) {
-        TestHelper.cyclicElementSearchByXpath("//*[@id='" + value + "']/div[2]/div/ul/li[5]/a").click();
+    public static void pressFreeOnSaleMissionControl() {
+        TestHelper.drv.findElement(By.xpath("//a/i[@class='fa fa-shopping-cart']")).click();
     }
     //----------- Select Article TYPE App Free/on sale
     public static void selectArticleAppsaleType(String value) {
-        WebElement dropdown = TestHelper.cyclicElementSearchByXpath("//*[@id='free-on-sale-tab-type']");
+        WebElement dropdown = TestHelper.cyclicElementSearchByXpath(appSaleType);
         Select sel = new Select(dropdown);
         sel.selectByVisibleText(value);
     }
@@ -29,8 +32,8 @@ public class AppFreeOnSale {
     public static void enterOldPrice(String value) {
         TestHelper.cyclicElementSearchByXpath(oldPrice).sendKeys(value);
     }
-    //----------- Select DATE
-    public static void priceDropDate(String value) {
+    //*********************************************************************** Select DATE
+   /* public static void priceDropDate(String value) {
         WebElement oldPriceDropDate = TestHelper.waitElementDisplayedByXpath("//*[@id='free-on-sale-tab-old-price-drop-date']");
         if (TestHelper.waitElementByXpath("//input[@id='free-on-sale-tab-old-price-drop-date']").isEnabled()){
             System.out.println("true");
@@ -41,18 +44,27 @@ public class AppFreeOnSale {
         oldPriceDropDate.click();
         TestHelper.cyclicElementSearchByXpath("//*[@aria-disabled='false']/..//button/span[(text()='" + value + "')]")
                 .click();
-    }
-    public static void selectFirstPlace(String value) {
-       /* WebElement dropdown = TestHelper.waitElementByXpath("//*[@id='free-on-sale-tab-place']");
+    }*/
+   /* public static void  priceDropDate(String value) {
+        WebElement oldPriceDropDate = TestHelper.waitElementDisplayedByXpath(priceDropDateFielld);
+        /*if (oldPriceDropDate.isEnabled()){
+                //(TestHelper.waitElementByXpath("//*[@id='free-on-sale-tab-old-price-drop-date']").isEnabled()){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+        TestHelper.drv.findElement(By.id("free-on-sale-tab-old-price-drop-date")).click();*/
+/*        oldPriceDropDate.click();
+        TestHelper.drv.findElement(By.xpath("//span[(contains(text(),"+value+"))][@class='ng-binding']")).click();
+        //TestHelper.slp(5);
 
-        dropdown.click();
-        Select sel = new Select(dropdown);
-        sel.selectByValue(value);
-        //selectByVisibleText(value);*/
-
-        Select dropdown = new Select(TestHelper.drv.findElement(By.id("free-on-sale-tab-place")));
-        dropdown.selectByValue(value);
-
+    }*/
+    //********************************************************************
+ /*   public static void selectFirstPlace(String value) {
+        WebElement place = TestHelper.cyclicElementSearchByXpath(appPlace);
+        Select sel = new Select(place);
+        sel.selectByVisibleText(value);
     }
     public static void enterDescription(String value) {
         TestHelper.cyclicElementSearchByXpath(description).sendKeys(value);
@@ -63,7 +75,8 @@ public class AppFreeOnSale {
     }
 
     public static void pressButtonPayPal() {
-        TestHelper.cyclicElementSearchByXpath("//*[@id='"+AppFreeOnSaleTests.appID+"']/div[2]/div/section/ng-include/div/form/div[12]/button/span[1]").click();
+        TestHelper.drv.findElement(By.xpath("//*[@class='btn btn-info btn-block btn-lg']")).click();
+       // TestHelper.cyclicElementSearchByXpath("//*[@id='"+appID+"']/div[2]/div/section/ng-include/div/form/div[12]/button/span[1]").click();
         //TestHelper.cyclicElementSearchByXpath("//*[@aria-disabled='false']/..//button/span[(text()='')]").click();
     }
 
@@ -98,9 +111,9 @@ public class AppFreeOnSale {
 //*[@id="datepicker-146-2535-27"]/button/span
 //*[@id="datepicker-146-2535-27"]/button/span
 //*[@aria-disabled='false']/..//button/span[(text()=07)]
-
+/*
 //---------------------------------------------
-/*// TestHelper.cyclicElementSearchByXpath(oldPrice).sendKeys(value);
+// TestHelper.cyclicElementSearchByXpath(oldPrice).sendKeys(value);
 //System.out.println(System.currentTimeMillis());
 //Calendar cal = new GregorianCalendar();
 //System.out.println(new SimpleDateFormat("dd.MM.yyyy").format(cal.getTime()));
@@ -108,10 +121,11 @@ public class AppFreeOnSale {
 TestHelper.cyclicElementSearchByXpath(priceDropDate).getLocation();
         System.out.println("TestHelper.cyclicElementSearchByXpath(priceDropDate).getLocation()");
         TestHelper.slp(5);
-        TestHelper.cyclicElementSearchByXpath(priceDropDate).sendKeys(value);
+        TestHelper.cyclicElementSearchByXpath(priceDropDate).sendKeys(value);*/
 
         /*Calendar c=Calendar.getInstance();
         System.out.println();
         c.add(Calendar.DATE,+1);
         System.out.println(c.get(c.DAY_OF_MONTH) + "." + (c.get(c.MONTH)+1) + "." + c.get(c.YEAR));*/
-//----------------------------------------
+//----------------------------------------*/
+}
