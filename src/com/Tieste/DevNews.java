@@ -7,10 +7,37 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DevNews  {
-    public static void main(String[] args) {
-        /*TestHelper.setup(TestHelper.url_ukr_net);
+public class DevNews {
+
+    // -----------Get App Title
+    public static String getAppTitle(String value){
         TestHelper.slp(5);
+        return TestHelper.waitElementDisplayedByXpath("//section//h2[contains(text(),'" + value + "')]").getText();
+    }
+    //------------Dev News
+    public static void pressAccessFeaturesButton(String value) {
+        TestHelper.drv.findElement(By.xpath("(//*[@id='app-" + value + "']/div)[1]")).click();
+        TestHelper.drv.navigate().to("http://st.apppicker.com/profile/apps/" + value);
+    }
+
+    public static void pressDevNews() {
+        TestHelper.slp(3);
+        TestHelper.drv.findElement(By.xpath("//a/i[@class='fa fa-code']")).click();
+        TestHelper.slp(3);
+    }
+    //----------- Input Description
+    public static void enterText(String value) {
+        WebElement a= TestHelper.cyclicElementSearchByXpath("//textarea[@id='dev-news-tab-announcement']");
+        a.clear();
+        a.sendKeys(value);
+        TestHelper.slp(3);
+        TestHelper.drv.findElement(By.xpath("//button[@type='button']")).click();
+    }
+
+
+
+
+        /*
         Login.emailFieldUkrNet("apppicker_developer");
         Login.passwordFieldUkrNet("apppicker_developer");
         Login.pressLoginbuttonUkrNet();
@@ -38,11 +65,7 @@ public class DevNews  {
                 return d.getTitle().toLowerCase().startsWith("cheese!");
             }
         });
+*/
 
-        // Should see: "cheese! - Google Search"
-        System.out.println("Page title is: " + driver.getTitle());
-
-        //Close the browser
-        //driver.quit();*/
-    }
 }
+
